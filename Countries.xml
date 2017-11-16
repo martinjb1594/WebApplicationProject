@@ -1,30 +1,27 @@
 <?xml version='1.0'?>
-<comments>
-    <comment>
-        <Comment_rate>1</Comment_rate>
-        <Comment_title>TEST</Comment_title>
-        <Name>Ana</Name>
-        <Comment_sum>TEST this comment<Comment_sum>
-    </comment>
+<countries>
     <country>
-        <Country_code>AX</Country_code>
-        <Region>EU</Region>
-        <Name>Aland Islands</Name>
-        <Capital>Mariehamn</Capital>
-        <Phone_code>+358-18</Phone_code>
+        <Name>Anna</Name>
+        <Address>2 main street Dublin 12334455</Address>
+        <Latitude>111111</Latitude>
+        <Longitude>11111111</Longitude>
     </country>
     <country>
-        <Country_code>AL</Country_code>
-        <Region>EU</Region>
-        <Name>Albania</Name>
-        <Capital>Tirana</Capital>
-        <Phone_code>355</Phone_code>
+        <Name>White</Name>
+        <Address>Jsjdjdh</Address>
+        <Latitude>Hdhshdh</Latitude>
+        <Longitude>HDHSHd</Longitude>
     </country>
     <country>
-        <Country_code>DZ</Country_code>
-        <Region>AF</Region>
-        <Name>Algeria</Name>
-        <Capital>Algiers</Capital>
-        <Phone_code>213</Phone_code>
+        <Name>hdgh</Name>
+        <Address>dfhdh</Address>
+        <Latitude>dfhdfh</Latitude>
+        <Longitude>dfhdfh</Longitude>
     </country>
-</comments>
+    <country>
+        <Name>sdgvsg</Name>
+        <Address>sdvgsvg</Address>
+        <Latitude>sdvgsvg</Latitude>
+        <Longitude>sdvgsdg</Longitude>
+    </country>
+</countries>

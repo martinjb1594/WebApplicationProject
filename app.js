@@ -13,6 +13,9 @@ router.use(express.static(path.resolve(__dirname, 'views')));
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
+
+
+
 // GET request to dislay index.html located inside /views folder
 router.get('/', function(req, res) {
   res.render('index');
@@ -76,3 +79,14 @@ server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() 
   var addr = server.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });
+
+
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app>
 
 <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVfcpeyAQi69kaXnPI6BHPbeL5d_cbrgM" async defer></script>
-        
-    <style>
+  <title>World Countries and Capitals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVfcpeyAQi69kaXnPI6BHPbeL5d_cbrgM" async defer></script>
+  <style>
         /* Set map Height on the page  this makes it dynamically expand */
-
         #map {
             height: 50%;
         }
-
         /* Optional: Makes the sample page fill the window. */
-
         html,
         body {
             height: 100%;
@@ -25,26 +21,45 @@
             padding: 0;
         }
     </style>
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script>
+    function load() {
+      $.ajax({
+        url: "/get/html",
+        cache: false,
+        success: function(html) {
+          $("#results").append(html);
+        }
+      });
+    };
+
+    $(document).ready(function() {
+      load();
+    });
+  </script>
 </head>
 
-<!-- This Is a nav bar by bootstrap -->
-
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="...">
-                </a>
-            </div>
-        </div>
-    </nav>
+ 
 
-    <!-- This decalres the map and initilizes -->
-    <div id="map"></div>
+  <div id="map"></div>
     <!-- Place the Maps api onto separiate js page inline isnt the best  -->
     <script>
-
         // this is the array add some more things in to test it use , to seperate and [] to define
         var locations = [
             ['martin', 'nci', '0838177261', -33.890542, 151.274856, 1]
@@ -76,42 +91,76 @@
                 }
             })(marker, i));
         }
-
     </script>
+  
+  
+  <div class="container">
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+      </div>
+    </div>
+    <div class="page-header">
+      <h1>All The Places You Were In </h1>
+    </div>
+    <div>
+       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+    </div>
+    
+    
+    <div class="row">
+      <div id="results"  class="span6">
+      </div>
+      <div class="span4">
+        <ul class="nav nav-list well">
+          <li>
+               <form enctype='application/json' action="/post/json" method="post">
+              <div class="field">
+                <input type="text" name="Name" placeholder="Name">
+              </div>
+              <div class="field">
+                <input type="text" name="Address" placeholder="Address">
+              </div>
+              <div class="field">
+                <input type="text" name="Latitude" placeholder="Latitude">
+              </div>
+              <div class="field">
+                <input type="text" name="Longitude" placeholder="Longitude">
+              </div>
+             
+              <div class="field">
+                <button type="submit">Add place</button>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<script>
+  //<!-- function myFunction() {-->
+// Declare variables 
+ // var input, filter, Countries, country, Country_code,Region,Name,Capital,Phone_code, i;
+//  input = document.getElementById("myInput");
+ // filter = input.value.toUpperCase();
+ // Countries = document.getElementById("myTable");
+ // country = Countries.getElementsByTagName("tr");
 
-    </br>
-    </br>
-    </br>
-    <!--  Create container to cetner the inputs then use the grid system to allign the items  -->
-    <div class="container">
-        <!-- create new row -->
-        <div class="row">
-            <!-- section the page into coloums -->
-            <div class="col-md-1">
-                <label>Name</label>
-            </div>
-            <div class="col-md=11">
-                <input type="Name" class="form-control" placeholder="John">
-            </div>
+  // Loop through all table rows, and hide those who don't match the search query
+  //for (i = 0; i < tr.length; i++) {
+  //  td = tr[i].getElementsByTagName("td")[0];
+  //  if (td) {
+   //   if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+   //     tr[i].style.display = "";
+   //   } else {
+   //     tr[i].style.display = "none";
+ //     }
+ //   } 
+//  }
+//}
 
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <label>Address</label>
-            </div>
-            <div class="col-md=11">
-                <input type="Name" class="form-control" placeholder="123 elm street">
-            </div>
-        </div>
+  
+  </script>  
 
-
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-            crossorigin="anonymous"></script>
 </body>
 
 </html>

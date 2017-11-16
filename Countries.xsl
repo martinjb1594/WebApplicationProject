@@ -20,24 +20,24 @@
 			<body>
 				<table>
 					<tr>
-						<th>Comment Rate</th>
-						<th>Comment Title</th>
 						<th>Name</th>
-						<th>Comment</th>
+						<th>Address</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
 					</tr>
-					<xsl:for-each select="comments/comment">
+					<xsl:for-each select="countries/country">
 							<tr>
-								<td>
-									<xsl:value-of select="Comment_rate"/>
-								</td>
-								<td>
-									<xsl:value-of select="Comment_title"/>
-								</td>
 								<td>
 									<xsl:value-of select="Name"/>
 								</td>
 								<td>
-									<xsl:value-of select="Comment_sum"/>
+									<xsl:value-of select="Address"/>
+								</td>
+								<td>
+									<xsl:value-of select="Latitude"/>
+								</td>
+								<td>
+									<xsl:value-of select="Longitude"/>
 								</td>
 							</tr>
 					</xsl:for-each>
