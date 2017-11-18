@@ -21,7 +21,7 @@
 				<table>
 					<tr>
 						<th>Name</th>
-						<th>Address</th>
+						<th>Location_type</th>
 						<th>Latitude</th>
 						<th>Longitude</th>
 					</tr>
@@ -31,7 +31,7 @@
 									<xsl:value-of select="Name"/>
 								</td>
 								<td>
-									<xsl:value-of select="Address"/>
+									<xsl:value-of select="Location_type"/>
 								</td>
 								<td>
 									<xsl:value-of select="Latitude"/>

@@ -2,7 +2,7 @@
 <html lang="en" ng-app>
 
 <head>
-  <title>World Countries and Capitals</title>
+  <title>Pin your locations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="app.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -52,6 +52,25 @@
       load();
     });
   </script>
+  <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("results");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </head>
 
 <body>
@@ -100,10 +119,10 @@
       </div>
     </div>
     <div class="page-header">
-      <h1>All The Places You Were In </h1>
+      <h1>All Your Pins</h1>
     </div>
     <div>
-       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
     </div>
     
     
@@ -118,7 +137,7 @@
                 <input type="text" name="Name" placeholder="Name">
               </div>
               <div class="field">
-                <input type="text" name="Address" placeholder="Address">
+                <input type="text" name="Location_type" placeholder="Location Type">
               </div>
               <div class="field">
                 <input type="text" name="Latitude" placeholder="Latitude">
@@ -128,7 +147,7 @@
               </div>
              
               <div class="field">
-                <button type="submit">Add place</button>
+                <button type="submit">Pin it</button>
               </div>
             </form>
           </li>
@@ -136,31 +155,11 @@
       </div>
     </div>
   </div>
-<script>
-  //<!-- function myFunction() {-->
-// Declare variables 
- // var input, filter, Countries, country, Country_code,Region,Name,Capital,Phone_code, i;
-//  input = document.getElementById("myInput");
- // filter = input.value.toUpperCase();
- // Countries = document.getElementById("myTable");
- // country = Countries.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  //for (i = 0; i < tr.length; i++) {
-  //  td = tr[i].getElementsByTagName("td")[0];
-  //  if (td) {
-   //   if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-   //     tr[i].style.display = "";
-   //   } else {
-   //     tr[i].style.display = "none";
- //     }
- //   } 
-//  }
-//}
 
+   
   
-  </script>  
-
+  
 </body>
 
 </html>

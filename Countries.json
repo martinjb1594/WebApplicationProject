@@ -2,27 +2,45 @@
     "country": [
         {
             "Name": "Anna",
-            "Address": "2 main street Dublin 12334455",
+            "Location_type": "2 main street Dublin 12334455",
             "Latitude": "111111",
             "Longitude": "11111111"
         },
         {
             "Name": "White",
-            "Address": "Jsjdjdh",
+            "Location_type": "Jsjdjdh",
             "Latitude": "Hdhshdh",
             "Longitude": "HDHSHd"
         },
         {
             "Name": "hdgh",
-            "Address": "dfhdh",
+            "Location_type": "dfhdh",
             "Latitude": "dfhdfh",
             "Longitude": "dfhdfh"
         },
         {
             "Name": "sdgvsg",
-            "Address": "sdvgsvg",
+            "Location_type": "sdvgsvg",
             "Latitude": "sdvgsvg",
             "Longitude": "sdvgsdg"
+        },
+        {
+            "Name": "Ana",
+            "Location_type": "dontknow",
+            "Latitude": "13231132",
+            "Longitude": "156164"
+        },
+        {
+            "Name": "Ana",
+            "Address": "fadagf",
+            "Latitude": "adgnsdkgj",
+            "Longitude": "ksdjgskdjg"
+        },
+        {
+            "Name": "sazsa",
+            "Location_type": "sss",
+            "Latitude": "ssss",
+            "Longitude": "sss"
         }
     ]
 }
