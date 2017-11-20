@@ -26,8 +26,8 @@ router.get('/get/html', function(req, res) {
   
     res.writeHead(200, { 'Content-Type': 'text/html' });
     
-    var docSource = fs.readFileSync('Countries.xml', 'utf8');
-    var stylesheetSource = fs.readFileSync('Countries.xsl', 'utf8');
+    var docSource = fs.readFileSync('Locations.xml', 'utf8');
+    var stylesheetSource = fs.readFileSync('Locations.xsl', 'utf8');
     
     var doc = libxslt.libxmljs.parseXml(docSource);
     var stylesheet = libxslt.parse(stylesheetSource);
@@ -45,7 +45,7 @@ router.post('/post/json', function(req, res) {
   function appendJSON(obj) {
 
     // Read in a JSON file
-    var JSONfile = fs.readFileSync('Countries.json', 'utf8');
+    var JSONfile = fs.readFileSync('Locations.json', 'utf8');
 
     // Parse the JSON file in order to be able to edit it 
     var JSONparsed = JSON.parse(JSONfile);
@@ -57,13 +57,13 @@ router.post('/post/json', function(req, res) {
     var JSONformated = JSON.stringify(JSONparsed, null, 4);
 
     // Write the updated JSON file back to the system 
-    fs.writeFileSync('Countries.json', JSONformated);
+    fs.writeFileSync('Locations.json', JSONformated);
 
     // Convert the updated JSON file to XML     
-    var XMLformated = js2xmlparser.parse("countries", JSON.parse(JSONformated));
+    var XMLformated = js2xmlparser.parse("locations", JSON.parse(JSONformated));
 
     // Write the resulting XML back to the system
-    fs.writeFileSync('Countries.xml', XMLformated);
+    fs.writeFileSync('Locations.xml', XMLformated);
 
   }
 

@@ -2,41 +2,15 @@
 <html lang="en" ng-app>
 
 <head>
-  <title>Pin your locations</title>
+  <title>Personal World Address Book</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVfcpeyAQi69kaXnPI6BHPbeL5d_cbrgM" async defer></script>
-  <style>
-        /* Set map Height on the page  this makes it dynamically expand */
-        #map {
-            height: 50%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-  <style>
-    body {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-    
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-      border: 1px solid black;
-      text-align: center;
-    }
-  </style>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+   <script src="/js/map.js"></script>
   <script>
     function load() {
       $.ajax({
@@ -47,97 +21,40 @@
         }
       });
     };
-
     $(document).ready(function() {
       load();
     });
   </script>
-  <script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("results");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
 </head>
 
 <body>
- 
 
   <div id="map"></div>
-    <!-- Place the Maps api onto separiate js page inline isnt the best  -->
-    <script>
-        // this is the array add some more things in to test it use , to seperate and [] to define
-        var locations = [
-            ['martin', 'nci', '0838177261', -33.890542, 151.274856, 1]
-        ];
-        // create map and center to where we need
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: new google.maps.LatLng(-33.92, 151.25),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-        // create info window instance
-        var infowindow = new google.maps.InfoWindow();
-        // decare varables for marker and the array
-        var marker, i;
-        // loop through the array getting the lat and lang based on each location
-        for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][3], locations[i][4]),
-                map: map
-            });
-            // add click event
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    // set the info window so we can use it to insert each details of the array 
-                    infowindow.setContent('</h1>Name: ' + locations[i][0] + "</h1>" +
-                        '</br></div> Address: ' + locations[i][1] + "</div>" +
-                        '</br></div> Number ' + locations[i][2]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
-    </script>
-  
-  
+
   <div class="container">
-    <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
       </div>
     </div>
     <div class="page-header">
-      <h1>All Your Pins</h1>
+      <h1>All The Places You Were In </h1>
     </div>
     <div>
-       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
     </div>
-    
-    
+
     <div class="row">
-      <div id="results"  class="span6">
+      <div id="results" class="span6">
       </div>
       <div class="span4">
         <ul class="nav nav-list well">
           <li>
-               <form enctype='application/json' action="/post/json" method="post">
+            <form enctype='application/json' action="/post/json" method="post">
               <div class="field">
                 <input type="text" name="Name" placeholder="Name">
               </div>
               <div class="field">
-                <input type="text" name="Location_type" placeholder="Location Type">
+                <input type="text" name="Address" placeholder="Address">
               </div>
               <div class="field">
                 <input type="text" name="Latitude" placeholder="Latitude">
@@ -145,9 +62,8 @@ function myFunction() {
               <div class="field">
                 <input type="text" name="Longitude" placeholder="Longitude">
               </div>
-             
               <div class="field">
-                <button type="submit">Pin it</button>
+                <button type="submit">Add place</button>
               </div>
             </form>
           </li>
@@ -155,11 +71,6 @@ function myFunction() {
       </div>
     </div>
   </div>
-
-
-   
-  
-  
 </body>
 
 </html>
