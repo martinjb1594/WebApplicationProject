@@ -26,7 +26,7 @@ router.get('/get/html', function(req, res) {
   
     res.writeHead(200, { 'Content-Type': 'text/html' });
     
-    var docSource = fs.readFileSync('Locations.xml', 'utf8');
+    var docSource = fs.readFileSync('views/Locations.xml', 'utf8');
     var stylesheetSource = fs.readFileSync('Locations.xsl', 'utf8');
     
     var doc = libxslt.libxmljs.parseXml(docSource);
@@ -51,7 +51,7 @@ router.post('/post/json', function(req, res) {
     var JSONparsed = JSON.parse(JSONfile);
 
     // Add a new record into country array within the JSON file    
-    JSONparsed.country.push(obj);
+    JSONparsed.location.push(obj);
 
     // Beautify the resulting JSON file
     var JSONformated = JSON.stringify(JSONparsed, null, 4);
@@ -63,7 +63,7 @@ router.post('/post/json', function(req, res) {
     var XMLformated = js2xmlparser.parse("locations", JSON.parse(JSONformated));
 
     // Write the resulting XML back to the system
-    fs.writeFileSync('Locations.xml', XMLformated);
+    fs.writeFileSync('views/Locations.xml', XMLformated);
 
   }
 
