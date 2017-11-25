@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<locations>
+  <location>
+    <Name>joe</Name>
+    <Address>2 main street Dublin 12334455</Address>
+    <Latitude>54.3512192</Latitude>
+    <Longitude>-6.2472192</Longitude>
+  </location>
+  <location>
+    <Name>MyName1</Name>
+    <Address>awy</Address>
+    <Latitude>53.3512192</Latitude>
+    <Longitude>-6.2472192</Longitude>
+  </location>
+  <location>
+    <Name>MyName1</Name>
+    <Address>awy</Address>
+    <Latitude>55.3512192</Latitude>
+    <Longitude>-6.2472192</Longitude>
+  </location>
+  <location>
+    <Name>maerin</Name>
+    <Address>12533</Address>
+    <Latitude>56.3512192</Latitude>
+    <Longitude>-6.2472192</Longitude>
+  </location>
+  <location>
+    <Name>arwh</Name>
+    <Address>awy</Address>
+    <Latitude>53.3512192</Latitude>
+    <Longitude>-8.2472192</Longitude>
+  </location>
+  <location>
+    <Name>gred</Name>
+    <Address>aerth</Address>
+    <Latitude>53.3512192</Latitude>
+    <Longitude>-5.2472192</Longitude>
+  </location>
+  <location>
+    <Name>grw</Name>
+    <Address>ewg</Address>
+    <Latitude>53.3512192</Latitude>
+    <Longitude>-4.2472192</Longitude>
+  </location>
+  <location>
+    <Name>dtujdg</Name>
+    <Address>dhdtg</Address>
+    <Latitude>58.3512192</Latitude>
+    <Longitude>-6.2472192</Longitude>
+  </location>
+</locations>
