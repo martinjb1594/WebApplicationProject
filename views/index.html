@@ -91,7 +91,7 @@
       <h1>All The Places You Were In </h1>
     </div>
     <div>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+      <input type="text"   pattern="[A-Za-z]{1,20}" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
     </div>
 
     <div class="row">
@@ -102,16 +102,16 @@
           <li>
             <form enctype='application/json' action="/post/json" method="post">
               <div class="field">
-                <input type="text" pattern="[A-Za-z]{3}" name="Name" placeholder="Name">
+                <input type="text" pattern="[A-Za-z]{1,20}" name="Name" placeholder="Name">
               </div>
               <div class="field">
-                <input type="text" pattern="[A-Za-z]{3}" name="Address" placeholder="Location Type">
+                <input type="text" pattern="[A-Za-z]{1,20}" name="Address" placeholder="Location Type">
               </div>
               <div class="field">
-                <input type="number" name="Latitude" placeholder="54.3512192">
+                <input type="number" step="any" name="Latitude" placeholder="54.3512192">
               </div>
               <div class="field">
-                <input type="number" name="Longitude" placeholder="-6.2472192">
+                <input type="number"  step="any" name="Longitude" placeholder="-6.2472192">
               </div>
               <div class="field">
                 <button type="submit">Add place</button>

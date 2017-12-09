@@ -14,7 +14,22 @@
                 "Longitude": [
                     "-6.2472192"
                 ]
-            }
+            },
+            {
+                "Name": [
+                    "arwh"
+                ],
+                "Address": [
+                    "awy"
+                ],
+                "Latitude": [
+                    "53.3512192"
+                ],
+                "Longitude": [
+                    "-8.2472192"
+                ]
+            },
+            null
         ]
     }
 }
