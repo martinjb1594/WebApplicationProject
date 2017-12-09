@@ -102,22 +102,22 @@
           <li>
             <form enctype='application/json' action="/post/json" method="post">
               <div class="field">
-                <input type="text" name="Name" placeholder="Name">
+                <input type="text" pattern="[A-Za-z]{3}" name="Name" placeholder="Name">
               </div>
               <div class="field">
-                <input type="text" name="Address" placeholder="Address">
+                <input type="text" pattern="[A-Za-z]{3}" name="Address" placeholder="Location Type">
               </div>
               <div class="field">
-                <input type="text" name="Latitude" placeholder="Latitude">
+                <input type="number" name="Latitude" placeholder="54.3512192">
               </div>
               <div class="field">
-                <input type="text" name="Longitude" placeholder="Longitude">
+                <input type="number" name="Longitude" placeholder="-6.2472192">
               </div>
               <div class="field">
                 <button type="submit">Add place</button>
               </div>
             </form>
-                <button id="delete">Delete</button>
+                <button id="delete" onClick="window.location.reload()">Delete</button>
           </li>
         </ul>
       </div>
