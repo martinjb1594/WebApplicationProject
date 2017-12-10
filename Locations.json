@@ -17,20 +17,6 @@
             },
             {
                 "Name": [
-                    "MyName1"
-                ],
-                "Address": [
-                    "awy"
-                ],
-                "Latitude": [
-                    "55.3512192"
-                ],
-                "Longitude": [
-                    "-6.2472192"
-                ]
-            },
-            {
-                "Name": [
                     "maerin"
                 ],
                 "Address": [
@@ -55,20 +41,6 @@
                 ],
                 "Longitude": [
                     "-5.2472192"
-                ]
-            },
-            {
-                "Name": [
-                    "grw"
-                ],
-                "Address": [
-                    "ewg"
-                ],
-                "Latitude": [
-                    "53.3512192"
-                ],
-                "Longitude": [
-                    "-4.2472192"
                 ]
             },
             {

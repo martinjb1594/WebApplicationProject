@@ -1,3 +1,5 @@
+// initialise the map and get the xml location
+
 function initialise() {
     myLatlng = new google.maps.LatLng(54.559323,-3.321304);
     mapOptions = {
@@ -15,11 +17,12 @@ function initialise() {
      
 }
     google.maps.event.addDomListener(window, 'load', initialise);
- 
+ // create markers based on the xml file
 function loadMarkers() {
     map.markers = map.markers || []
     downloadUrl(xmlUrl, function(data) {
         var xml = data.responseXML;
+      // find the xml and loop throuh it to find each element 
         markers = xml.documentElement.getElementsByTagName("location");
         for (var i = 0; i < markers.length; i++) {
             var name = markers[i].children[0].innerHTML;
@@ -38,6 +41,7 @@ function loadMarkers() {
         }
     });
 }
+// add the info window
     function bindInfoWindow(marker, map, infowindow, html) {
     marker.addListener('click', function() {
         infowindow.setContent(html);
