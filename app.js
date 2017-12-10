@@ -28,7 +28,7 @@ router.get('/get/html', function(req, res) {
     'Content-Type': 'text/html'
   });
 
-  var docSource = fs.readFileSync('Locations.xml', 'utf8');
+  var docSource = fs.readFileSync('views/Locations.xml', 'utf8');
   var stylesheetSource = fs.readFileSync('Locations.xsl', 'utf8');
 
   var doc = libxslt.libxmljs.parseXml(docSource);
@@ -64,10 +64,10 @@ router.post('/post/json', function(req, res) {
   function appendJSON(obj) {
        console.log(obj);
     // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
-    xmlFileToJs('Locations.xml', function(err, result) {
+    xmlFileToJs('views/Locations.xml', function(err, result) {
       if (err) throw (err);
       result.locations.location.push(obj);
-      jsToXmlFile('Locations.xml', result, function(err) {
+      jsToXmlFile('views/Locations.xml', result, function(err) {
         if (err) console.log(err);
       })
     })
@@ -106,7 +106,7 @@ router.post('/post/delete', function(req, res) {
 
    
     // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
-    xmlFileToJs('Locations.xml', function(err, result) {
+    xmlFileToJs('views/Locations.xml', function(err, result) {
       if (err) throw (err);
      
       result.locations.location.splice(obj.row-1,1);
@@ -115,7 +115,7 @@ router.post('/post/delete', function(req, res) {
       
       fs.writeFile('Locations.json', JSON.stringify(result, null, 4));
       
-      jsToXmlFile('Locations.xml', result, function(err) {
+      jsToXmlFile('views/Locations.xml', result, function(err) {
         if (err) console.log(err);
       })
     })
